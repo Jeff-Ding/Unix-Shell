@@ -1,6 +1,10 @@
 # Unix-Shell
 Back end implementation of UNIX shell from scratch. Project for Stanley Eisenstat's Systems Programming &amp; Computer Organization course at Yale (CS323).
 
+- [Description](#description)
+- [Assignment](#assignment)
+	- [Parse Details](#parse-details)
+
 ## Description
 This implementation is based on the Bourne shell, a baby brother of the Bourne-again shell
 bash, and offers a limited subset of bash's functionality (plus some extras):
