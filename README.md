@@ -1,6 +1,7 @@
 # Unix-Shell
-Backend implementation of UNIX shell from scratch. Project for Stanley Eisenstat's Systems Programming &amp; Computer Organization course at Yale (CS323).
+Back end implementation of UNIX shell from scratch. Project for Stanley Eisenstat's Systems Programming &amp; Computer Organization course at Yale (CS323).
 
+## Description
 This implementation is based on the Bourne shell, a baby brother of the Bourne-again shell
 bash, and offers a limited subset of bash's functionality (plus some extras):
 * local variables
@@ -19,7 +20,16 @@ bash, and offers a limited subset of bash's functionality (plus some extras):
   + wait (Wait until all children of the shell process have died.)
 * reporting the status of the last simple command, pipeline, or subcommand executed in the foreground by setting the environment variable $? to its "printed" value (e.g., "0" if the value is zero).
 
-## Front End (supplied implementation in parse.c)
+## Assignment
+Implemented *process()* and supporting functions for the shell back end. Code is in **process.c** which links with the front end files supplied for the assignment:
+
+* **mainBsh.o**: The main program (source is mainBsh.c)
+* **getLine.o**: Provides function to read in user input (interface in getLine.h)
+* **parse.o**: Provides functions to parse a user command and tokenize it into a tree of CMD structs (interface in parse.h, details below)
+
+After user input is read and parsed into a CMD struct tree, *process()* takes the tree and makes low-level system calls to execute the command. The full functionality in the [description](#description) is supported for commands.
+
+### Parse Details
 The syntax for a command is
 ```
   <stage>    = <simple> / (<command>)
